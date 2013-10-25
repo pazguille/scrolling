@@ -1,5 +1,4 @@
-# onscroll
-
+# scrolling
 
 Decouple the scroll event from the callback functions using requestAnimationFrames.
 
@@ -16,14 +15,14 @@ Decouple the scroll event from the callback functions using requestAnimationFram
 
 ## Installation
 
-    $ component install pazguille/onscroll
+    $ component install pazguille/scrolling
 
 See: [https://github.com/component/component](https://github.com/component/component)
 
 ### Standalone
 Also, you can use the standalone version:
 ```html
-<script src="onscroll.js"></script>
+<script src="scrolling.js"></script>
 ```
 
 ## How-to

@@ -1,6 +1,6 @@
 {
-  "name": "onscroll",
-  "repo": "pazguille/onscroll",
+  "name": "scrolling",
+  "repo": "pazguille/scrolling",
   "description": "Decouple the scroll event from the callback functions.",
   "version": "0.0.1",
   "keywords": [],
