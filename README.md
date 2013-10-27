@@ -26,10 +26,56 @@ Also, you can use the standalone version:
 ```
 
 ## How-to
-[ TODO ]
+First, requires the `scrolling` component:
+```js
+var scrolling = require('scrolling');
+```
+
+Now, define a listener for any HTMLElement:
+```js
+function foo() {
+    console.log('foo');
+}
+
+function bar() {
+    console.log('bar');
+}
+```
+
+Then, add some HTMLelements and its listeners to scrolling:
+```js
+scrolling(document.querySelector('#box'), foo);
+```
+```js
+scrolling(window, bar);
+
+// or
+
+scrolling(bar);
+```
 
 ## API
-[ TODO ]
+### scrolling(el, listener)
+Adds an `el` with a `listener` to the collection.
+- `el` [optional] - A given `HTMLElement` to add to scroll.
+- `listener` - A given `listener` to execute when the given `el` is scrolled.
+
+```js
+scrolling(el, listener);
+```
+
+### scrolling#remove(el, listener)
+Removes an `el` or its `listener` from the collection with the given `el`.
+- `el` - A given `HTMLElement` to remove.
+- `listener` [optional] - A given listener to remove.
+
+```js
+scrolling.remove(el, listener);
+
+// or
+
+scrolling.remove(el);
+```
 
 ## Contact
 - Guillermo Paz (Frontend developer - JavaScript developer | Web standards lover)
