@@ -16,32 +16,6 @@ var on = (window.addEventListener !== undefined) ? 'addEventListener' : 'attachE
     elementScrolled,
     scroll;
 
-/**
- * If the scroll event exist, it will execute the elementScrolled listeners.
- * @function
- * @private
- */
-function update() {
-
-    // No changing, exit
-    if (!scrolled) { return; }
-
-    if (elementScrolled !== undefined) {
-
-        var i = 0,
-            listeners = scroll._collection[elementScrolled].listeners,
-            len = listeners.length;
-
-        for (i; i < len; i += 1) {
-            listeners[i]();
-        }
-
-        elementScrolled = undefined;
-    }
-
-    // Change scroll status
-    scrolled = false;
-}
 
 /**
  * Captures the scroll event and the element who emits it.
@@ -49,8 +23,38 @@ function update() {
  * @private
  */
 function captureScroll() {
-    scrolled = true;
-    elementScrolled = this;
+
+    // No changing, exit
+    if (!scrolled) {
+        scrolled = true;
+        elementScrolled = this;
+
+        /**
+         * requestAnimationFrame
+         */
+        requestAnimationFrame(update);
+    }
+}
+
+/**
+ * If the scroll event exist, it will execute the elementScrolled listeners.
+ * @function
+ * @private
+ */
+function update() {
+
+    var i = 0,
+        listeners = scroll._collection[elementScrolled].listeners,
+        len = listeners.length;
+
+    for (i; i < len; i += 1) {
+        listeners[i]();
+    }
+
+    elementScrolled = undefined;
+
+    // Change scroll status
+    scrolled = false;
 }
 
 /**
@@ -165,11 +169,3 @@ scrolling.remove = function (el, listener) {
  * Expose scrolling
  */
 exports = module.exports = scrolling;
-
-/**
- * requestAnimationFrame
- */
-(function updateloop() {
-    requestAnimFrame(updateloop);
-    update();
-}());
