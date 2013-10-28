@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Scrolling.js Component</title>
+        <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, serif;
+                background-color: #F6F8F8;
+                color: #5A6673;
+                text-shadow: 0 -1px #FFF;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 4em;
+            }
+
+            h2 {
+                font-size: 2.5em;
+            }
+
+            #container {
+                max-width: 920px;
+                height: 400px;
+                border: 5px solid #EEE;
+                margin: 0 auto;
+                overflow: scroll;
+                padding: 10px;
+                background-color: #fff;
+            }
+
+            #container span {
+                font-size: 11em;
+                color: #95a5a6;
+            }
+
+            .box {
+                display: inline-block;
+                margin: 15px;
+                width: 121px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .box-styled {
+                border: 1px solid #BBB;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+                background-color: #fff;
+            }
+
+            footer {
+                margin: 30px auto;
+            }
+
+            .heart {
+                font-style: normal;
+                font-weight: 500;
+                color: #c0392b;
+            }
+
+            #twitter {
+                position: absolute;
+                top: 20px;
+                left: 20px;
+            }
+
+            #github {
+                display: inline-block;
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 100;
+                border: 0;
+                width: 149px;
+                height: 149px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Scrolling.js Component</h1>
+        <h2>Decouple the scroll event from callback functions.</h2>
+
+        <div id="container"><span>SCROLL DOWN!</span><br></div>
+
+        <footer>
+            <iframe id="twitter" allowtransparency="true" frameborder="0" width="100" height="22" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?text=scrolling.js%3A%20Decouple%20the%20scroll%20event%20from%20callback%20functions.&amp;url=http%3A%2F%2Fpazguille.github.io%2Fscrolling"></iframe>
+
+            <a href="https://github.com/pazguille/scrolling" id="github"><img width="149" height="149" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+            by <a href="http://pazguille.me/">Guille Paz</a> with <i class="heart">❤</i>
+        </footer>
+
+        <script src="build/build.js"></script>
+        <script>
+            var scrolling = require('scrolling'),
+                container = document.querySelector('#container');
+
+            function addBox() {
+                var i = 10;
+
+                while (i -= 1) {
+                    var box = document.createElement('div');
+                    box.className = 'box box-unstyled';
+                    box.innerHTML = 'This is a box!';
+                    container.appendChild(box);
+
+                }
+
+            }
+
+            function styleBox() {
+                var boxes = document.querySelectorAll('.box-unstyled'),
+                    len = boxes.length;
+
+                while (len -= 1) {
+                    boxes[len].className = 'box box-styled';
+                }
+
+            }
+
+            scrolling(container, addBox);
+            scrolling(container, styleBox);
+
+        </script>
+    </body>
+</html>
