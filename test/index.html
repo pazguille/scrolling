@@ -20,14 +20,34 @@
                 font-size: 2.5em;
             }
 
-            .box {
-                width: 700px;
+            #container {
+                max-width: 920px;
                 height: 400px;
                 border: 5px solid #EEE;
                 margin: 0 auto;
                 overflow: scroll;
                 padding: 10px;
-                text-align: left;
+                background-color: #fff;
+            }
+
+            #container span {
+                font-size: 11em;
+                color: #95a5a6;
+            }
+
+            .box {
+                display: inline-block;
+                margin: 15px;
+                width: 121px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                font-size: 16px;
+            }
+
+            .box-styled {
+                border: 1px solid #BBB;
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
                 background-color: #fff;
             }
 
@@ -63,47 +83,7 @@
         <h1>Scrolling.js Component</h1>
         <h2>Decouple the scroll event from callback functions.</h2>
 
-        <div class="box">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec massa tortor, accumsan id pellentesque vel, ullamcorper sed quam. Aenean sagittis urna eu porta elementum. Phasellus euismod eros et quam egestas laoreet. Nam turpis neque, pellentesque in justo ut, mattis viverra ante. Mauris tempus elit a mi tincidunt ultrices. Integer vel porttitor metus. Phasellus tempor gravida sem, a semper nisl.
-
-            In venenatis interdum risus, sed porttitor est molestie sed. Duis vulputate felis nunc, in tempor mauris ullamcorper et. Curabitur ornare leo ut gravida faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Maecenas ultrices libero urna, sit amet imperdiet ante facilisis eu. Cras vel eros vitae est faucibus vehicula quis nec dolor. Sed vitae ornare orci. Quisque vitae pulvinar lacus. Curabitur quis ultrices velit. Donec porttitor, mauris sed auctor accumsan, elit magna rutrum lectus, eget semper diam tellus non justo.
-
-            Curabitur at enim augue. Nunc ac viverra enim, eget venenatis orci. Aenean orci orci, sollicitudin in porta ut, interdum eu ipsum. Suspendisse potenti. Pellentesque aliquam vitae augue sit amet mattis. Etiam lacinia ornare volutpat. Maecenas varius neque et purus vulputate, non lobortis purus cursus. Nullam risus purus, semper in dolor a, hendrerit vestibulum erat. Mauris condimentum nunc id ligula volutpat, sed dictum est commodo. Maecenas hendrerit quam sit amet quam convallis, at tristique dolor faucibus. Ut tempus justo a libero tempus mollis. Aenean ligula mauris, suscipit id massa ut, lacinia ultricies magna. Nam dignissim, enim eget hendrerit eleifend, elit turpis fermentum purus, sit amet pretium mauris purus tempor ipsum.
-
-            Pellentesque pulvinar id odio in vulputate. Nullam varius metus vitae velit dictum rhoncus. Nam sed lorem ultrices, tincidunt felis in, sodales ante. Proin tortor leo, consectetur sit amet enim rutrum, feugiat fringilla felis. Nullam ac iaculis turpis. Nam consequat congue risus, id dignissim quam ultricies sit amet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Mauris quis dapibus urna.
-
-            Quisque non tempus sapien. Donec scelerisque facilisis fringilla. Quisque in eros non diam blandit congue. Suspendisse sed vestibulum ipsum. Praesent sed porta eros. Quisque viverra, risus gravida posuere suscipit, mi est pellentesque dolor, eget sodales metus nunc a arcu. Sed semper, lorem eu consectetur tincidunt, nibh nisl fringilla neque, at condimentum velit nulla non lectus.
-
-            Quisque a arcu leo. Cras turpis orci, ultricies euismod nisl sed, semper rutrum magna. Nam at euismod justo, sed vehicula risus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Pellentesque semper ut dolor non tincidunt. Donec vitae molestie orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum ac venenatis metus, vel dapibus urna.
-
-            Suspendisse laoreet, dolor non dapibus accumsan, elit enim luctus lorem, vitae accumsan tortor dui nec neque. Vivamus mauris lectus, posuere ut magna ac, rutrum congue magna. Vivamus at mi tortor. Praesent fringilla blandit nulla eu egestas. Suspendisse id ante elit. Morbi nunc lectus, pulvinar vulputate facilisis sed, condimentum nec tellus. Mauris sapien massa, porta nec risus nec, dictum egestas felis. In hac habitasse platea dictumst. Sed a aliquet libero. Pellentesque sit amet ligula tempus, pharetra dolor id, adipiscing tellus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam tempus risus eu convallis blandit. Nulla nulla lacus, rutrum quis nisl id, sodales ullamcorper ligula. Etiam luctus vulputate luctus. Proin eros est, egestas non ultricies eu, pulvinar id nisl.
-
-            Maecenas suscipit tristique magna quis pharetra. Fusce eget posuere urna. Nam blandit lacinia magna, eget dapibus elit ullamcorper vel. Proin feugiat, quam quis tempor volutpat, quam odio pretium dui, quis porttitor augue risus at diam. Nunc in sapien sit amet enim hendrerit tincidunt eget nec lectus. Aliquam congue semper tristique. Morbi rutrum augue at nibh condimentum, at posuere eros semper.
-
-            Nulla nisl neque, fermentum id ligula ac, rhoncus adipiscing ante. Fusce urna felis, dictum elementum purus sed, semper sodales eros. Morbi tortor nibh, ultricies viverra volutpat eu, convallis vel ligula. In hac habitasse platea dictumst. Maecenas a facilisis quam. Mauris tortor odio, euismod id nisi eget, mattis ultrices nulla. Sed pretium eleifend metus eu aliquet. Cras et tristique lectus. Maecenas molestie est id erat dignissim lacinia. Phasellus quis mauris vel enim venenatis pretium sed nec ligula. Sed venenatis diam iaculis eros placerat, id porta mi ornare.
-
-            Duis dolor est, luctus ac luctus vel, commodo et quam. Integer sit amet augue justo. Nunc tristique congue bibendum. Vivamus sit amet diam vel ante mollis volutpat vitae sed arcu. Ut eget risus quis lorem aliquet lobortis. Maecenas porttitor id massa nec egestas. Etiam commodo libero tellus, sit amet tempus erat posuere nec. Mauris enim velit, tempor at velit ac, vestibulum mollis quam. Suspendisse non lectus enim. Etiam vitae odio vitae arcu mollis pellentesque et in tellus. Vivamus sapien metus, fermentum nec eros nec, molestie porttitor lacus. Donec quam leo, ornare non tincidunt eu, consequat sit amet dui. Duis et nibh quis libero dictum aliquet. Aenean luctus in augue mattis pharetra.
-
-            Morbi dignissim porttitor nulla sed commodo. Suspendisse potenti. Donec condimentum, tortor ut interdum luctus, lacus diam adipiscing odio, a sollicitudin urna nisi vel lacus. Morbi sem ipsum, dapibus eget semper at, congue eget ante. Mauris ut ipsum ipsum. Aliquam nec congue lacus, non tincidunt velit. Sed posuere at leo at consectetur. Cras a malesuada urna. Morbi cursus vitae turpis nec euismod. Cras aliquet erat ut iaculis sodales. Ut ac est sit amet urna scelerisque scelerisque. Integer adipiscing hendrerit nisi, at molestie velit blandit sit amet. Proin nec enim sit amet arcu hendrerit venenatis. Nam dolor enim, laoreet quis mi vel, consequat adipiscing magna. Sed vel lacus eget nibh sagittis consequat.
-
-            Maecenas vulputate nulla a pharetra gravida. Etiam commodo nibh at eleifend cursus. Maecenas fermentum, eros id pulvinar facilisis, purus turpis elementum diam, id luctus erat odio quis elit. Praesent sit amet accumsan enim. Ut vehicula ante velit, nec facilisis est mattis porttitor. Vestibulum iaculis euismod aliquet. Vivamus turpis diam, dictum eu aliquam sed, scelerisque vitae quam.
-
-            Curabitur elementum ligula eget sollicitudin volutpat. Nulla rhoncus turpis a imperdiet sodales. Maecenas eu mauris eu massa ornare rhoncus. Duis scelerisque risus felis, sed rhoncus magna tristique ac. Mauris commodo turpis eu tristique congue. Suspendisse elementum lacus ut pharetra bibendum. Duis vel placerat odio. Fusce sed odio eget nibh interdum porttitor at a nisi. Integer porttitor purus ligula, eget dapibus mauris ultrices non.
-
-            Nulla facilisi. Nam accumsan turpis leo, vitae cursus elit posuere ac. Vestibulum diam sem, iaculis a luctus et, commodo at tortor. Donec in tellus lorem. Sed vel felis et urna tincidunt blandit. Cras a facilisis libero. Nulla viverra est at neque iaculis, eu aliquet libero condimentum. Pellentesque vitae porttitor turpis. Nunc eu diam ipsum. Sed consequat turpis non est sagittis volutpat.
-
-            Integer malesuada interdum posuere. Morbi vel sollicitudin tortor. Vivamus auctor massa non augue laoreet adipiscing. Donec posuere, metus quis pulvinar lacinia, nisl ligula luctus mauris, at convallis sapien libero vitae leo. Sed faucibus nisl in blandit adipiscing. Ut eu neque et lectus fringilla tempor. Praesent accumsan purus et facilisis euismod. Praesent faucibus metus risus, id ultricies justo imperdiet pulvinar. In vestibulum, nisi eget placerat pharetra, libero arcu molestie lacus, at mollis nisl dolor sit amet velit. Nullam non ante venenatis, laoreet sapien sed, gravida lectus. Curabitur ut neque elit.
-
-            Pellentesque gravida magna condimentum felis adipiscing, id ullamcorper metus viverra. Maecenas tempus feugiat quam, quis porttitor lacus placerat vitae. Sed non lectus ac mi tincidunt egestas in at nibh. Fusce nec posuere libero. Nam luctus volutpat nulla nec consequat. Maecenas risus erat, elementum ac rhoncus sed, ornare nec nisl. Nulla aliquet erat ante, et placerat nisi consequat sit amet. Vivamus sed magna in lorem rutrum placerat. Vestibulum fermentum dui ac lacus malesuada varius. Suspendisse aliquet quis urna eget rhoncus. In sed convallis sapien. Vivamus hendrerit placerat mi ac dapibus. Pellentesque justo mauris, tempus vel euismod ac, blandit eget ante.
-
-            Curabitur lacinia tempor magna in mollis. Sed sollicitudin eget nibh scelerisque dignissim. Nunc mattis dapibus lobortis. Vestibulum eu condimentum lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris placerat justo sit amet facilisis accumsan. Integer et neque pulvinar, semper sapien hendrerit, ultricies enim. Suspendisse rhoncus orci a urna placerat, non semper odio semper. Morbi quis velit diam. Aenean congue pellentesque leo, a tempus purus interdum vel. Mauris lorem purus, lacinia eu sapien quis, rutrum viverra urna. Fusce vehicula, tortor a rutrum pretium, lorem erat pretium magna, in aliquam nunc ipsum vitae erat. Donec vehicula varius neque, ut eleifend elit laoreet id. Donec cursus lobortis pretium. Aliquam porttitor lorem nec lectus auctor, quis congue tortor luctus. In quis eros porta eros dictum malesuada vitae at erat.
-
-            Maecenas at augue nulla. Pellentesque ac imperdiet mauris, et vehicula velit. Etiam molestie arcu eget libero auctor fringilla. Mauris pretium id tellus sit amet malesuada. Duis laoreet viverra nibh eget dictum. Fusce malesuada lacus et eros fringilla vehicula. Quisque venenatis, eros ac cursus porttitor, quam neque sollicitudin est, sit amet rutrum nulla ligula nec eros. Mauris at nulla ut magna vulputate hendrerit et ut neque. Nunc gravida tempus nibh id dignissim. Suspendisse dui diam, varius nec quam in, accumsan sagittis nibh. Maecenas justo urna, pharetra vel dictum et, pellentesque vitae neque. Vestibulum at nulla et nisi malesuada commodo sed non lectus. Fusce egestas nulla at ligula condimentum volutpat. Proin congue, dolor eu auctor sagittis, libero nunc tincidunt nibh, ut volutpat mi metus nec dolor. Sed sit amet ante nec urna semper lobortis sed id libero.
-
-            In diam leo, iaculis eu tincidunt eu, egestas vitae quam. Etiam iaculis est lectus, aliquam posuere odio eleifend vel. In sed pretium enim. Donec ut justo porttitor, posuere augue ac, vulputate orci. Aliquam aliquam mollis sem, blandit venenatis elit. Mauris consectetur rutrum quam, quis blandit turpis placerat a. Vestibulum et adipiscing ante. Phasellus lectus odio, congue nec feugiat ac, egestas aliquam elit.
-
-            Proin vestibulum erat nec mi egestas, id pellentesque neque dignissim. In vel urna lectus. Fusce ut orci pharetra, imperdiet risus ac, vestibulum nisl. Sed bibendum lectus velit, quis varius velit feugiat nec. Donec id odio dolor. Etiam cursus dapibus lorem, in placerat orci sollicitudin mollis. Vestibulum aliquet nulla sed sem tincidunt sollicitudin at in eros. Vestibulum elementum neque ac tellus mattis iaculis. Aliquam sed justo vel neque eleifend pretium a eu tortor. Etiam porttitor turpis nisl, vitae lacinia est eleifend id. Proin viverra augue a scelerisque vulputate. Maecenas at dolor et quam auctor auctor et lacinia dui. Praesent tempor facilisis urna at ornare. Cras in velit et neque lacinia cursus non sit amet mi.
-        </div>
+        <div id="container"><span>SCROLL DOWN!</span><br></div>
 
         <footer>
             <iframe id="twitter" allowtransparency="true" frameborder="0" width="100" height="22" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?text=scrolling.js%3A%20Decouple%20the%20scroll%20event%20from%20callback%20functions.&amp;url=http%3A%2F%2Fpazguille.github.io%2Fscrolling"></iframe>
@@ -115,11 +95,35 @@
 
         <script src="../build/build.js"></script>
         <script>
-            var scrolling = require('scrolling');
-            function bar() {console.log('bar')}
-            function foo() {console.log('foo')}
-            scrolling(document.querySelector('.box'), bar);
-            scrolling(document.querySelector('.box'), foo);
+            var scrolling = require('scrolling'),
+                container = document.querySelector('#container');
+
+            function addBox() {
+                var i = 10;
+
+                while (i -= 1) {
+                    var box = document.createElement('div');
+                    box.className = 'box box-unstyled';
+                    box.innerHTML = 'This is a box!';
+                    container.appendChild(box);
+
+                }
+
+            }
+
+            function styleBox() {
+                var boxes = document.querySelectorAll('.box-unstyled'),
+                    len = boxes.length;
+
+                while (len -= 1) {
+                    boxes[len].className = 'box box-styled';
+                }
+
+            }
+
+            scrolling(container, addBox);
+            scrolling(container, styleBox);
+
         </script>
     </body>
 </html>
