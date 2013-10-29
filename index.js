@@ -2,7 +2,7 @@
  * Module dependencies
  */
 var on = (window.addEventListener !== undefined) ? 'addEventListener' : 'attachEvent',
-    off = (window.removeEventListener !== undefined) ? 'removeEventListener' : 'dettachEvent',
+    off = (window.removeEventListener !== undefined) ? 'removeEventListener' : 'detachEvent',
     scrollEvent = (on !== 'addEventListener') ? 'onscroll' : 'scroll',
     scrolled = false,
     requestAnimFrame = (function () {
