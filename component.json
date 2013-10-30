@@ -2,7 +2,7 @@
   "name": "scrolling",
   "repo": "pazguille/scrolling",
   "description": "Decouple the scroll event from the callback functions.",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": "Guille Paz <guille87paz@gmail.com>",
   "twitter": "@pazguille",
   "keywords": [
