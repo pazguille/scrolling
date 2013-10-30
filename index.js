@@ -14,7 +14,8 @@ var on = (window.addEventListener !== undefined) ? 'addEventListener' : 'attachE
             };
     }()),
     scrolledElement,
-    scroll;
+    scroll,
+    eve;
 
 
 /**
