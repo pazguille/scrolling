@@ -33,8 +33,14 @@ var scrolling = require('scrolling');
 
 Now, define a listener for any HTMLElement:
 ```js
-function foo() {
+function foo(event) {
     console.log('foo');
+
+    // The function receive the scroll event as parameter.
+    console.log(event);
+
+    // The function context is the scrolled element.
+    console.log(this.scrollTop);
 }
 
 function bar() {
