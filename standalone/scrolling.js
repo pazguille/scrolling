@@ -16,7 +16,7 @@
                     window.setTimeout(callback, 1000 / 60);
                 };
         }()),
-        elementScrolled,
+        scrolledElement,
         scroll;
 
 
@@ -25,36 +25,37 @@
      * @function
      * @private
      */
-    function captureScroll() {
-
+    function captureScroll(e) {
         // No changing, exit
         if (!scrolled) {
             scrolled = true;
-            elementScrolled = this;
+            scrolledElement = this;
+            eve = e || window.e;
+
 
             /**
              * requestAnimationFrame
              */
-            requestAnimationFrame(update);
+            requestAnimFrame(update);
         }
     }
 
     /**
-     * If the scroll event exist, it will execute the elementScrolled listeners.
+     * If the scroll event exist, it will execute the scrolledElement listeners.
      * @function
      * @private
      */
     function update() {
 
         var i = 0,
-            listeners = scroll._collection[elementScrolled].listeners,
+            listeners = scroll._collection[scrolledElement].listeners,
             len = listeners.length;
 
         for (i; i < len; i += 1) {
-            listeners[i]();
+            listeners[i].call(scrolledElement, eve);
         }
 
-        elementScrolled = undefined;
+        scrolledElement = undefined;
 
         // Change scroll status
         scrolled = false;
@@ -167,7 +168,6 @@
 
         return scrolling;
     };
-
     /**
      * Expose scrolling
      */
