@@ -17,7 +17,8 @@
                 };
         }()),
         scrolledElement,
-        scroll;
+        scroll,
+        eve;
 
 
     /**
