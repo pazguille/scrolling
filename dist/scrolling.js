@@ -58,7 +58,9 @@ function update() {
       len = listeners.length;
 
   for (i; i < len; i += 1) {
-    listeners[i].call(scrolledElement, eve);
+    if (listeners[i]) {
+      listeners[i].call(scrolledElement, eve)
+    }
   }
 
   scrolledElement = undefined;
@@ -125,6 +127,11 @@ Scroll.prototype.add = function (el, listener) {
  * @returns {scroll}
  */
 Scroll.prototype.remove = function (el, listener) {
+
+  if (this._collection[el] == undefined) {
+    return this;
+  }
+
   var listeners = this._collection[el].listeners,
       i = 0,
       len = listeners.length;
