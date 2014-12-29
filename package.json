@@ -1,0 +1,38 @@
+{
+  "name": "scrolling",
+  "version": "0.1.0",
+  "description": "Decouple the scroll event from the callback functions.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pazguille/scrolling.git"
+  },
+  "scripts": {
+    "start": "gulp",
+    "test": "gulp test"
+  },
+  "devDependencies": {
+    "gulp": "^3.6.2",
+    "gulp-footer": "^1.0.5",
+    "gulp-header": "^1.0.5",
+    "gulp-mocha": "^0.5.2",
+    "gulp-rename": "^1.2.0",
+    "gulp-replace": "^0.4.0",
+    "gulp-uglify": "^0.3.1",
+    "mkdirp": "^0.3.5",
+    "better-assert": "^1.0.1"
+  },
+  "keywords": [
+    "scroll",
+    "scrolling",
+    "decouple",
+    "event",
+    "debouce"
+  ],
+  "author": "Guille Paz <guille87paz@gmail.com> (http://pazguille.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pazguille/scrolling/issues"
+  },
+  "homepage": "https://github.com/pazguille/scrolling"
+}
