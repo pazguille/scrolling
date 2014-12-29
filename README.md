@@ -84,9 +84,9 @@ scrolling.remove(el);
 
     npm run dist
 
-## Tests
+## Test
 
-    npm test
+Open file `./test/test.html` in your browser.
 
 ## Made with ❤ by
 - Guillermo Paz (Frontend developer - JavaScript developer | Web standards lover)
