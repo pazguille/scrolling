@@ -23,7 +23,8 @@ var on = window.addEventListener !== undefined ? 'addEventListener' : 'attachEve
         };
     }()),
     scrolledElement,
-    scroll;
+    scroll,
+    eve;
 
 
 /**
