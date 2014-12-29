@@ -8,7 +8,7 @@
     "url": "https://github.com/pazguille/scrolling.git"
   },
   "scripts": {
-    "start": "gulp",
+    "dist": "gulp",
     "test": "gulp test"
   },
   "devDependencies": {
