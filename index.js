@@ -1,17 +1,19 @@
+'use strict';
+
 /**
- * Module dependencies
+ * Privates
  */
-var on = (window.addEventListener !== undefined) ? 'addEventListener' : 'attachEvent',
-    off = (window.removeEventListener !== undefined) ? 'removeEventListener' : 'detachEvent',
-    scrollEvent = (on !== 'addEventListener') ? 'onscroll' : 'scroll',
+var on = window.addEventListener !== undefined ? 'addEventListener' : 'attachEvent',
+    off = window.removeEventListener !== undefined ? 'removeEventListener' : 'detachEvent',
+    scrollEvent = on !== 'addEventListener' ? 'onscroll' : 'scroll',
     scrolled = false,
     requestAnimFrame = (function () {
-        return window.requestAnimationFrame ||
-            window.webkitRequestAnimationFrame ||
-            window.mozRequestAnimationFrame ||
-            function (callback) {
-                window.setTimeout(callback, 1000 / 60);
-            };
+      return window.requestAnimationFrame ||
+        window.webkitRequestAnimationFrame ||
+        window.mozRequestAnimationFrame ||
+        function (callback) {
+          window.setTimeout(callback, 1000 / 60);
+        };
     }()),
     scrolledElement,
     scroll;
@@ -23,18 +25,17 @@ var on = (window.addEventListener !== undefined) ? 'addEventListener' : 'attachE
  * @private
  */
 function captureScroll(e) {
-    // No changing, exit
-    if (!scrolled) {
-        scrolled = true;
-        scrolledElement = this;
-        eve = e || window.e;
+  // No changing, exit
+  if (!scrolled) {
+    scrolled = true;
+    scrolledElement = this;
+    eve = e || window.e;
 
-
-        /**
-         * requestAnimationFrame
-         */
-        requestAnimFrame(update);
-    }
+    /**
+     * requestAnimationFrame
+     */
+    requestAnimFrame(update);
+  }
 }
 
 /**
@@ -44,18 +45,18 @@ function captureScroll(e) {
  */
 function update() {
 
-    var i = 0,
-        listeners = scroll._collection[scrolledElement].listeners,
-        len = listeners.length;
+  var i = 0,
+      listeners = scroll._collection[scrolledElement].listeners,
+      len = listeners.length;
 
-    for (i; i < len; i += 1) {
-        listeners[i].call(scrolledElement, eve);
-    }
+  for (i; i < len; i += 1) {
+    listeners[i].call(scrolledElement, eve);
+  }
 
-    scrolledElement = undefined;
+  scrolledElement = undefined;
 
-    // Change scroll status
-    scrolled = false;
+  // Change scroll status
+  scrolled = false;
 }
 
 /**
@@ -64,8 +65,8 @@ function update() {
  * @returns {scroll} Returns a new instance of Scroll.
  */
 function Scroll() {
-    this.initialize();
-    return this;
+  this.initialize();
+  return this;
 }
 
 /**
@@ -74,8 +75,8 @@ function Scroll() {
  * @returns {scroll} Returns a new instance of Scroll.
  */
 Scroll.prototype.initialize = function () {
-    this._collection = {};
-    return this;
+  this._collection = {};
+  return this;
 };
 
 /**
@@ -88,23 +89,23 @@ Scroll.prototype.initialize = function () {
  */
 Scroll.prototype.add = function (el, listener) {
 
-    if ('function' === typeof el) {
-        listener = el;
-        el = window;
-    }
+  if ('function' === typeof el) {
+    listener = el;
+    el = window;
+  }
 
-    if (this._collection[el] === undefined) {
-        this._collection[el] = {
-            'listeners': []
-        };
+  if (this._collection[el] === undefined) {
+    this._collection[el] = {
+      'listeners': []
+    };
 
-        el[on](scrollEvent, captureScroll, false);
-    }
+    el[on](scrollEvent, captureScroll, false);
+  }
 
-    // Add listeners to an el collection
-    this._collection[el].listeners.push(listener);
+  // Add listeners to an el collection
+  this._collection[el].listeners.push(listener);
 
-    return this;
+  return this;
 };
 
 /**
@@ -116,25 +117,25 @@ Scroll.prototype.add = function (el, listener) {
  * @returns {scroll}
  */
 Scroll.prototype.remove = function (el, listener) {
-    var listeners = this._collection[el].listeners,
-        i = 0,
-        len = listeners.length;
+  var listeners = this._collection[el].listeners,
+      i = 0,
+      len = listeners.length;
 
-    if (len !== undefined) {
-        for (i; i < len; i += 1) {
-            if (listeners[i] === listener) {
-                listeners.splice(i, 1);
-                break;
-            }
-        }
+  if (len !== undefined) {
+    for (i; i < len; i += 1) {
+      if (listeners[i] === listener) {
+        listeners.splice(i, 1);
+        break;
+      }
     }
+  }
 
-    if (listeners.length === 0 || listener === undefined) {
-        el[off](scrollEvent, captureScroll, false);
-        delete this._collection[el];
-    }
+  if (listeners.length === 0 || listener === undefined) {
+    el[off](scrollEvent, captureScroll, false);
+    delete this._collection[el];
+  }
 
-    return this;
+  return this;
 };
 
 // Defines a new instance of Scroll.
@@ -148,9 +149,8 @@ scroll = new Scroll();
  * @returns {scroll}
  */
 function scrolling(el, listener) {
-    scroll.add(el, listener);
-
-    return scrolling;
+  scroll.add(el, listener);
+  return scrolling;
 }
 
 /**
@@ -161,12 +161,11 @@ function scrolling(el, listener) {
  * @returns {scrolling}
  */
 scrolling.remove = function (el, listener) {
-    scroll.remove(el, listener);
-
-    return scrolling;
+  scroll.remove(el, listener);
+  return scrolling;
 };
 
 /**
- * Expose scrolling
+ * Expose module
  */
-exports = module.exports = scrolling;
+module.exports = scrolling;
