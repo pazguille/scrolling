@@ -1,6 +1,6 @@
 {
   "name": "scrolling",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Decouple the scroll event from the callback functions.",
   "main": "index.js",
   "repository": {

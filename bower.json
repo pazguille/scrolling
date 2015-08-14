@@ -3,7 +3,7 @@
   "repository": "git@github.com:pazguille/scrolling.git",
   "description": "Decouple the scroll event from the callback functions.",
   "author": "@pazguille <guille87paz@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "ignore": [
     ".*",
     "package.json",
