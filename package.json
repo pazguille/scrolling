@@ -14,11 +14,11 @@
     "gulp": "^3.6.2",
     "gulp-footer": "^1.0.5",
     "gulp-header": "^1.0.5",
-    "gulp-mocha": "^0.5.2",
+    "gulp-mocha": "^3.0.1",
     "gulp-rename": "^1.2.0",
-    "gulp-replace": "^0.4.0",
-    "gulp-uglify": "^0.3.1",
-    "mkdirp": "^0.3.5",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0",
+    "mkdirp": "^0.5.1",
     "better-assert": "^1.0.1"
   },
   "keywords": [
